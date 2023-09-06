@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card">
+  <div class="card-header" style="color: white;"><strong style="color: white;">
+      {{ customer_record.Name }}</strong>
+  </div>
+  <div class="card-body">
+
+    <p class="card-text" style="color: white;">
+        <strong style="color: white;">Erp_ID: </strong>{{ customer_record.erp_Id }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Email: </strong>{{ customer_record.Email }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Phone: </strong>{{ customer_record.Phone }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Address: </strong>{{ customer_record.Address }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">City: </strong>{{ customer_record.City }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">State: </strong>{{ customer_record.State }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Zipcode: </strong>{{ customer_record.Pin }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Create At: </strong>{{ customer_record.created_at }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">ID: </strong>{{ customer_record.erp_Id }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Vdiscountpercent: </strong>{{ customer_record.Vdiscountpercent }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Popsstrata: </strong>{{ customer_record.Popsstrata }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Businesstype: </strong>{{ customer_record.Businesstype }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Warehouse Type: </strong>{{ customer_record.Warehouse_Type }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Warehouse Category: </strong>{{ customer_record.Warehouse_Category }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Prefix To Billno: </strong>{{ customer_record.Prefix_To_Billno }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Suffix To Billno: </strong>{{ customer_record.Suffix_To_Billno }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Prefix To Creditno: </strong>{{ customer_record.Prefix_To_Creditno }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Suffix To Creditno: </strong>{{ customer_record.Suffix_To_Creditno }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Prefix To Debitno: </strong>{{ customer_record.Prefix_To_Debitno }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Suffix To Debitno: </strong>{{ customer_record.Suffix_To_Debitno }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Prefix To Salereturnno: </strong>{{ customer_record.Prefix_To_Salereturnno }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Suffix To Salereturnno: </strong>{{ customer_record.Suffix_To_Salereturnno }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;"> Prefix Challan Number: </strong>{{ customer_record.Prefix_Challan_Number }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Suffix Challan Number: </strong>{{ customer_record.Suffix_Challan_Number }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">WAREHOUSE Label: </strong>{{ customer_record.Warehouse_Label }}
+    </p>
+
+
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Default Credit Limit: </strong>{{ customer_record.Default_Credit_Limit }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Default Credit Period: </strong>{{ customer_record.Default_Credit_Period }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Default Minimum Order Value: </strong>{{ customer_record.Default_Minimum_Order_Value }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Subzone: </strong>{{ customer_record.Subzone }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Parent WAREHOUSE: </strong>{{ customer_record.Parent_Warehouse }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Currency: </strong>{{ customer_record.Currency }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">QR Code Image: </strong>{{ customer_record.QR_Code_Image }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">WAREHOUSE TIN: </strong>{{ customer_record.Warehouse_TIN }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">PAN no: </strong>{{ customer_record.PAN_No }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">FSSAI no: </strong>{{ customer_record.FSSAI_No }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">WAREHOUSE CST: </strong>{{ customer_record.Warehouse_CST }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">GSTIN: </strong>{{ customer_record.GSTIN }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">WAREHOUSE LBT no: </strong>{{ customer_record.Warehouse_LBT_No }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Jurisdiction: </strong>{{ customer_record.Jurisdiction }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Country_WMS: </strong>{{ customer_record.Country_WMS }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Tenant_WMS: </strong>{{ customer_record.Tenant_WMS }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Category_WMS: </strong>{{ customer_record.Category_WMS }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Address_type_WMS: </strong>{{ customer_record.Address_type_WMS }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Address__line2_WMS: </strong>{{ customer_record.Address_line2_WMS }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Status_WMS: </strong>{{ customer_record.Status_WMS }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Zone_code_WMS: </strong>{{ customer_record.Zone_code_WMS }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Lat_WMS: </strong>{{ customer_record.Lat_WMS }}
+    </p>
+
+    <p class="card-text" style="color: white;">
+      <strong style="color: white;">Long_WMS: </strong>{{ customer_record.Long_WMS }}
+    </p>
+
+  </div>
+</div>
+
+<br /><br />
+<a href="{% url 'home' %}" class="btnbtn-secondary">Back</a>
+
+<a href="{% url 'delete_record' customer_record.id %}" class="btnbtn-secondary">Delete</a>
+
+<a href="{% url 'update_record' customer_record.id %}" class="btnbtn-secondary">Update Record</a>
+
+{% endblock %}

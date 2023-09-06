@@ -1,0 +1,308 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'f2replica2.css' %}">
+
+<div class="col-md-6 offset-md-3" style="padding-bottom: 0;margin-bottom: 0; height: 500px;">
+    <!-- <h1>Add Record</h1> -->
+    <br />
+
+    <form method="POST" action="{% url 'add_record' %}" autocomplete="off" style="height: 1100px;">
+        {% csrf_token %}
+        <div style="position: relative; left: 30px; top: -40px; color: #03e9f4 ; font-size: 20px;" class="login-box">IDENTITY
+            <div class="user-box">
+                <label for="{{ form.erp_Id.id_for_label }}" style="position: relative;top: 13px;">ERP ID:</label>
+                {{ form.erp_Id }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">Name:</label>
+                {{ form.Name }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">Address:</label>
+                {{ form.Address }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">Phone:</label>
+                {{ form.Phone }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">Email:</label>
+                {{ form.Email }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">Businesstype:</label>
+                {{ form.Businesstype }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">Warehouse_Type:</label>
+                {{ form.Warehouse_Type }}
+            </div>
+
+             <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">
+                    Warehouse_Category:</label>
+                {{ form.Warehouse_Category }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">GSTIN:</label>
+                {{ form.GSTIN }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">PAN_no:</label>
+                {{ form.PAN_no }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">Jurisdiction:</label>
+                {{ form.Jurisdiction }}
+            </div>
+        </div>
+
+
+        <div style="position: relative; left: 470px;top:-935px; color: #03e9f4 ; font-size: 20px;margin-bottom: 0;padding-bottom: 0;" class="login-box">LOGISTICS
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">QR_Code_Image:</label>
+                {{ form.QR_Code_Image }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">Parent_Warehouse:</label>
+                {{ form.Parent_Warehouse }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">Subzone:</label>
+                {{ form.Subzone }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">Default_Minimum_Order_Value:</label>
+                {{ form.Default_Minimum_Order_Value }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">Warehouse_Label:</label>
+                {{ form.Warehouse_Label }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">Pin:</label>
+                {{ form.Pin }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">State:</label>
+                {{ form.State }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">City:</label>
+                {{ form.City }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">District:</label>
+                {{ form.District }}
+            </div>
+
+           
+        </div>
+
+
+        <div style="position: relative; left: 900px; top: -1650px; color: #03e9f4 ;  font-size: 20px;margin-bottom: 0;padding-bottom: 0;" class="login-box">FINANCE
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}"
+                    style="position: relative;top: 13px;">Vdiscountpercent:</label>
+                {{ form.Vdiscountpercent }}
+            </div>
+            
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">
+                    Prefix_To_Billno:</label>
+                {{ form.Prefix_To_Billno }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}"
+                    style="position: relative;top: 13px;">Suffix_To_Billno:</label>
+                {{ form.Suffix_To_Billno }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}"
+                    style="position: relative;top: 13px;">Prefix_To_Creditno:</label>
+                {{ form.Prefix_To_Creditno }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}"
+                    style="position: relative;top: 13px;">Suffix_To_Creditno:</label>
+                {{ form.Suffix_To_Creditno }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}"
+                    style="position: relative;top: 13px;">Prefix_To_Debitno:</label>
+                {{ form.Prefix_To_Debitno }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}"
+                    style="position: relative;top: 13px;">Suffix_To_Debitno:</label>
+                {{ form.Suffix_To_Debitno }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}"
+                    style="position: relative;top: 13px;">Prefix_To_Salereturnno</label>
+                {{ form.Prefix_To_Salereturnno }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}"
+                    style="position: relative;top: 13px;">Suffix_To_Salereturnno:</label>
+                {{ form.Suffix_To_Salereturnno }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}"
+                    style="position: relative;top: 13px;">Prefix_Challan_Number:</label>
+                {{ form.Prefix_Challan_Number }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}"
+                    style="position: relative;top: 13px;">Suffix_Challan_Number:</label>
+                {{ form.Suffix_Challan_Number }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}"
+                    style="position: relative;top: 13px;">Default_Credit_Limit:</label>
+                {{ form.Default_Credit_Limit }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}"
+                    style="position: relative;top: 13px;">Default_Credit_Period:</label>
+                {{ form.Default_Credit_Period }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">Currency:</label>
+                {{ form.Currency }}
+            </div>
+        </div>
+
+
+        <!-- <div style="position: relative; left:30px;color:#03e9f4; font-size:20px; top: -1790px;" class="login-box">SEPERATE
+
+           
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">Area_Pin_Code:</label>
+                {{ form.Area_Pin_Code }}
+            </div>
+
+          
+        </div> -->
+
+
+        <div style="position:absolute;top: 860px; left: 470px; color:#03e9f4;font-size:20px;margin-bottom: 0;padding-bottom: 0;" class="login-box">NOT NEEDED
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;"> Warehouse_TIN:</label>
+                {{ form.Warehouse_TIN }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">FSSAI_no:</label>
+                {{ form.FSSAI_no }}
+            </div>
+
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;">Warehouse_CST:</label>
+                {{ form.Warehouse_CST }}
+            </div>
+            
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}"style="position: relative;top: 13px;">Warehouse_LBT_no:</label>
+                {{ form.Warehouse_LBT_no }}
+            </div>
+
+          
+        </div>
+
+        <div style="position: relative; left: 30px;top: -1750px; color: #03e9f4 ; font-size: 20px;" class="login-box">ANALYTICS
+            <div class="user-box">
+                <label for="{{ form.Name.id_for_label }}" style="position: relative;top: 13px;"> Popsstrata:</label>
+                {{ form.Popsstrata }}
+            </div>
+        </div>
+
+        <div style="position: absolute;top: 1210px;left:900px; color: #03e9f4; font-size: 20px; margin-bottom: 0;padding-bottom: 0;margin-right: 150px;" class="login-box">WMS
+            <div class="user-box">
+                <label for="{{ form.Country_WMS.id_for_label }}" style="position: relative;top: 13px;"> Country_WMS:</label>
+                {{ form.Country_WMS }}
+            </div>
+
+            <div class="user-box">
+                    <label for="{{ form.Tenant_WMS.id_for_label }}" style="position: relative;top: 13px;">Tenant_WMS:</label>
+                    {{ form.Tenant_WMS }}
+            </div>
+
+                <div class="user-box">
+                    <label for="{{ form.Category_WMS.id_for_label }}" style="position: relative;top: 13px;">Category_WMS:</label>
+                    {{ form.Category_WMS }}
+                </div>
+
+                <div class="user-box">
+                    <label for="{{ form.Address_type_WMS.id_for_label }}" style="position: relative;top: 13px;">Address_type_WMS:</label>
+                    {{ form.Address_type_WMS }}
+                </div>
+
+                <div class="user-box">
+                    <label for="{{ form.Address_line2_WMS.id_for_label }}" style="position: relative;top: 13px;">Address_line2_WMS :</label>
+                    {{ form.Address_line2_WMS }}
+                </div>
+
+                <div class="user-box">
+                    <label for="{{ form.Status_WMS.id_for_label }}" style="position: relative;top: 13px;"> Status_WMS:</label>
+                    {{ form.Status_WMS }}
+                </div>
+
+                <div class="user-box">
+                    <label for="{{ form.Zone_code_WMS.id_for_label }}" style="position: relative;top: 13px;">  Zone_code_WMS:</label>
+                    {{ form.Zone_code_WMS }}
+                </div>
+
+                <div class="user-box">
+                    <label for="{{ form.Lat_WMS.id_for_label }}" style="position: relative;top: 13px;">  Lat_WMS:</label>
+                    {{ form.Lat_WMS }}
+                </div>
+
+                <div class="user-box">
+                    <label for="{{ form.Long_WMS.id_for_label }}" style="position: relative;top: 13px;"> Long_WMS:</label>
+                    {{ form.Long_WMS }}
+                </div>
+
+            <button type="submit" class="btnbtn-secondary" style="position: relative;top: 100px; right: 710px;top: -400px; margin-bottom:0px;padding-bottom: 0; letter-spacing: 4px;">ADD CUSTOMER</button>
+            <a href="{% url 'home' %}" class="btn-btn-secondary" style=" color: white; text-decoration: none;letter-spacing: 4px;font-size: 15px; position: relative;right: 680px;bottom: 400px;padding: 18px; ">BACK</a>
+        </div>
+        
+    </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'f3replica3.css' %}">
+<!-- <img src="{% static 'one.jpg' %}" alt="" height="400px"> -->
+
+{% if user.is_authenticated %}
+
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Search...">
+  <button type="button" id="searchButton">Search</button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const searchButton = document.getElementById("searchButton");
+  const searchInput = document.getElementById("searchInput");
+
+  searchButton.addEventListener("click", function() {
+      const searchText = searchInput.value.trim().toLowerCase();
+      const rows = document.querySelectorAll(".table-light"); // Adjust the class selector as needed
+
+      rows.forEach(row => {
+          const textContent = row.textContent.trim().toLowerCase();
+          row.style.display = textContent.includes(searchText) ? "" : "none";
+      });
+  });
+});
+</script>
+
+
+<a href="{% url 'download_csv' %}" class="btn btn-primary" style="color: rgb(239, 232, 232);text-decoration: none;position: relative;top: 30px;">Download CSV</a>
+
+<table style="border: 2px white solid;position: relative;top: 50px;background: white; border-spacing: 20px;">
+  <thead class="table-light" style="color: white; border: 1px white solid;">
+    <tr style="color: white;border: 2px white solid;">
+      <th scope="col" style="color: black; border: 1px black solid; padding-right: 20px;padding-left: 20px;">id</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Erp_Id</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Name*</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Address</th>
+      <th scope="col" style="color: black; border: 1px black solid;">District</th>
+      <th scope="col" style="color: black; border: 1px black solid;padding-right: 20px;padding-left: 20px;">City</th>
+      <th scope="col" style="color: black; border: 1px black solid;padding-right: 20px;padding-left: 20px;">State</th>
+      <th scope="col" style="color: black; border: 1px black solid;padding-right: 20px;padding-left: 20px;">Pin</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Phone</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Vdiscountpercent</th> 
+      <th scope="col" style="color: black; border: 1px black solid;padding-right: 20px;padding-left: 20px;">Email</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Popsstrata</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Businesstype</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Warehouse Type</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Warehouse Category</th> 
+      <th scope="col" style="color: black; border: 1px black solid;padding-right: 20px;padding-left: 20px;">Prefix To Billno</th>
+      <th scope="col" style="color: black; border: 1px black solid;padding-right: 20px;padding-left: 20px;">Suffix To Billno</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Prefix To Creditno</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Suffix To Creditno</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Prefix To Debitno</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Suffix To Debitno</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Prefix To Salereturnno</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Suffix To Salereturnno</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Prefix Challan Number</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Suffix Challan Number</th> 
+      <th scope="col" style="color: black; border: 1px black solid;">Warehouse Label</th>
+      <th scope="col" style="color: black; border: 1px black solid;padding-right: 20px;padding-left: 20px;">Default Credit Limit</th>
+      <th scope="col" style="color: black; border: 1px black solid;padding-right: 20px;padding-left: 20px;">Default Credit Period</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Default Minimum Order Value</th> 
+      <th scope="col" style="color: black; border: 1px black solid;">Subzone</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Parent Warehouse</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Currency</th>
+      <th scope="col" style="color: black; border: 1px black solid;padding-right: 20px;padding-left: 20px;">QR Code Image</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Warehouse TIN</th>
+      <th scope="col" style="color: black; border: 1px black solid;padding-right: 20px;padding-left: 20px;">PAN no</th>
+      <th scope="col" style="color: black; border: 1px black solid;padding-right: 20px;padding-left: 20px;">FSSAI no</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Warehouse CST</th>
+      <th scope="col" style="color: black; border: 1px black solid;padding-right: 20px;padding-left: 20px;">GSTIN</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Warehouse LBT no</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Jurisdiction</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Country_WMS</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Tenant_WMS</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Category_WMS</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Address_type_WMS</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Address_line2_WMS</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Status_WMS</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Zone_code_WMS</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Lat_WMS</th>
+      <th scope="col" style="color: black; border: 1px black solid;">Long_WMS</th> 
+      
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- {% if records %} -->
+    {% for record in records %}
+    <tr class="table-light" style="color: black;border: 2px black solid;">
+      <td style="color: black;border: 1px black solid;text-align: center;"><a href="{% url 'record' record.id %}" style="color: black;">{{ record.id }}</a></td>
+      <td style="color: black;border: 1px black solid; text-align: center;">{{ record.erp_Id }}</td>
+      <td style="color: black;border: 1px black solid; text-align: center;">{{ record.Name }}</td>
+      <td style="color: black;border: 1px black solid; text-align: center;">{{ record.Address }}</td>
+      <td style="color: black;border: 1px black solid; text-align: center;">{{ record.District }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.City }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.State }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Pin }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Phone }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Vdiscountpercent }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Email }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Popsstrata }}</td>
+      <td style="color: black; border: 1px black solid;text-align: center;">{{ record.Businesstype }}</td>
+      <td style="color: black; border: 1px black solid;text-align: center;">{{ record.Warehouse_Type }}</td>
+      <td style="color: black; border: 1px black solid;text-align: center;">{{ record.Warehouse_Category }}</td> 
+      <td style="color: black; border: 1px black solid;text-align: center;">{{ record.Prefix_To_Billno }}</td>
+      <td style="color: black; border: 1px black solid;text-align: center;">{{ record.Suffix_To_Billno }}</td>
+      <td style="color: black; border: 1px black solid;text-align: center;">{{ record.Prefix_To_Creditno }}</td>
+      <td style="color: black; border: 1px black solid;text-align: center;">{{ record.Suffix_To_Creditno }}</td>
+      <td style="color: black; border: 1px black solid;text-align: center;">{{ record.Prefix_To_Debitno }}</td>
+      <td style="color: black; border: 1px black solid;text-align: center;">{{ record.Suffix_To_Debitno }}</td>
+      <td style="color: black; border: 1px black solid;text-align: center;">{{ record.Prefix_To_Salereturnno }}</td>
+      <td style="color: black; border: 1px black solid;text-align: center;">{{ record.Suffix_To_Salereturnno }}</td>
+      <td style="color: black; border: 1px black solid;text-align: center;">{{ record.Prefix_Challan_Number }}</td>
+      <td style="color: black; border: 1px black solid;text-align: center;">{{ record.Suffix_Challan_Number }}</td> 
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Warehouse_Label }}</td>
+      <td style="color: black; border: 1px black solid;text-align: center;">{{ record.Default_Credit_Limit }}</td>
+      <td style="color: black; border: 1px black solid;text-align: center;">{{ record.Default_Credit_Period }}</td>
+      <td style="color: black; border: 1px black solid;text-align: center;">{{ record.Default_Minimum_Order_Value }}</td> 
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Subzone }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Parent_Warehouse }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Currency }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.QR_Code_Image }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Warehouse_TIN }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.PAN_no }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.FSSAI_no }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Warehouse_CST }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.GSTIN }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Warehouse_LBT_no }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Jurisdiction }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Country_WMS }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Tenant_WMS }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Category_WMS }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Address_type_WMS }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Address_line2_WMS }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Status_WMS }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Zone_code_WMS }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Lat_WMS }}</td>
+      <td style="color: black;border: 1px black solid;text-align: center;">{{ record.Long_WMS }}</td>
+      
+    </tr>
+    {% endfor %}
+
+    <!-- {% endif %} -->
+
+  </tbody>
+</table>
+
+{% else %}
+
+<div class="col-md-6 offset-md-3" style="background-image: 
+url('https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
+ background-repeat: no-repeat;height: 500px; position: relative;left: 200px; margin-right: 190px;">
+  <h1 style="color: rgba(214, 145, 103, 0.902);position: relative;top: -190px;left: -20px;font-family:cursive;rotate: -30deg;">Login</h1>
+  <br />
+
+  <form method="POST" action="{% url 'home' %}" autocomplete="off">
+    {% csrf_token %}
+
+    <div class="mb-3">
+      <input type="text" class="form-control" name="username" placeholder="Username" required style="position: relative;
+      top: 200px;left: 300px; background-color: bisque;">
+    </div>
+    <br />
+    <div class="mb-3">
+      <input type="password" class="form-control" name="password" placeholder="Password" required
+      style="position: relative;top: 200px;left: 300px;  background-color: bisque;">
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-secondary" style="position: relative;top: 200px;left: 300px; font-family:cursive">Login</button>
+    <br>
+    
+  </form>
+</div>
+{% endif %}
+{% endblock %}
